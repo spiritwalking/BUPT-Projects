@@ -1,0 +1,329 @@
+in:
+5
+ip = 4
+flag = 0
+ir = 2832
+ax1 = 5 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 0 ax6 = 0 ax7 = 0 ax8 = 0
+ip = 8
+flag = 0
+ir = 336
+ax1 = 5 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 0 ax7 = 0 ax8 = 0
+ip = 12
+flag = 0
+ir = 337
+ax1 = 5 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 0 ax7 = 0 ax8 = 0
+ip = 16
+flag = 0
+ir = 352
+ax1 = 5 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 20
+flag = 0
+ir = 272
+ax1 = 0 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = 0
+ir = 353
+ax1 = 0 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = -1
+ir = 2325
+ax1 = 0 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = -1
+ir = 2562
+ax1 = 0 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = -1
+ir = 550
+ax1 = 0 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = -1
+ir = 528
+ax1 = 1 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = -1
+ir = 310
+ax1 = 1 ax2 = 0 ax3 = 0 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = -1
+ir = 560
+ax1 = 1 ax2 = 0 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = -1
+ir = 355
+ax1 = 1 ax2 = 0 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = -1
+ir = 2560
+ax1 = 1 ax2 = 0 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = -1
+ir = 2325
+ax1 = 1 ax2 = 0 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = -1
+ir = 2562
+ax1 = 1 ax2 = 0 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = -1
+ir = 550
+ax1 = 1 ax2 = 1 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = -1
+ir = 528
+ax1 = 2 ax2 = 1 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = -1
+ir = 310
+ax1 = 2 ax2 = 1 ax3 = 1 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = -1
+ir = 560
+ax1 = 2 ax2 = 1 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = -1
+ir = 355
+ax1 = 2 ax2 = 1 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = -1
+ir = 2560
+ax1 = 2 ax2 = 1 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = -1
+ir = 2325
+ax1 = 2 ax2 = 1 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = -1
+ir = 2562
+ax1 = 2 ax2 = 1 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = -1
+ir = 550
+ax1 = 2 ax2 = 3 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = -1
+ir = 528
+ax1 = 3 ax2 = 3 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = -1
+ir = 310
+ax1 = 3 ax2 = 3 ax3 = 2 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = -1
+ir = 560
+ax1 = 3 ax2 = 3 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = -1
+ir = 355
+ax1 = 3 ax2 = 3 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = -1
+ir = 2560
+ax1 = 3 ax2 = 3 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = -1
+ir = 2325
+ax1 = 3 ax2 = 3 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = -1
+ir = 2562
+ax1 = 3 ax2 = 3 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = -1
+ir = 550
+ax1 = 3 ax2 = 6 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = -1
+ir = 528
+ax1 = 4 ax2 = 6 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = -1
+ir = 310
+ax1 = 4 ax2 = 6 ax3 = 3 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = -1
+ir = 560
+ax1 = 4 ax2 = 6 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = -1
+ir = 355
+ax1 = 4 ax2 = 6 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = -1
+ir = 2560
+ax1 = 4 ax2 = 6 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = -1
+ir = 2325
+ax1 = 4 ax2 = 6 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = -1
+ir = 2562
+ax1 = 4 ax2 = 6 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = -1
+ir = 550
+ax1 = 4 ax2 = 10 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = -1
+ir = 528
+ax1 = 5 ax2 = 10 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = -1
+ir = 310
+ax1 = 5 ax2 = 10 ax3 = 4 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = -1
+ir = 560
+ax1 = 5 ax2 = 10 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = -1
+ir = 355
+ax1 = 5 ax2 = 10 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = -1
+ir = 2560
+ax1 = 5 ax2 = 10 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = 0
+ir = 2325
+ax1 = 5 ax2 = 10 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 32
+flag = 0
+ir = 2562
+ax1 = 5 ax2 = 10 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 36
+flag = 0
+ir = 550
+ax1 = 5 ax2 = 15 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 40
+flag = 0
+ir = 528
+ax1 = 6 ax2 = 15 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 44
+flag = 0
+ir = 310
+ax1 = 6 ax2 = 15 ax3 = 5 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 48
+flag = 0
+ir = 560
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 52
+flag = 0
+ir = 355
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 24
+flag = 0
+ir = 2560
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 28
+flag = 1
+ir = 2325
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 56
+flag = 1
+ir = 2562
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+out: 15
+ip = 60
+flag = 1
+ir = 3104
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+ip = 64
+flag = 1
+ir = 0
+ax1 = 6 ax2 = 15 ax3 = 6 ax4 = 0
+ax5 = 16384 ax6 = 16386 ax7 = 0 ax8 = 0
+
+codeSegment :
+185597952 22036480 22085632 23085058 17825792 23134208 152371200 167903260
+36044800 34603009 20316160 36700161 23265280 167837668 203423744 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+dataSegment :
+5 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link crossorigin="anonymous" integrity="sha384-lORadheqlc4cbo9L5It1a5q/AS57s9lXvER3RpFU97WXyO3bZL+siYtgOjLigS3D" href="https://lib.baomitu.com/element-ui/2.12.0/theme-chalk/index.css" rel="stylesheet">
+        <title>TokiCPUEMU Editor</title>
+        <script crossorigin="anonymous" src="https://lib.baomitu.com/vue/2.6.11/vue.js"></script>
+        <script crossorigin="anonymous" src="https://lib.baomitu.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+        <script crossorigin="anonymous" src="https://lib.baomitu.com/element-ui/2.12.0/index.js"></script>
+<style>
+h1 {
+    font-size: 23px;
+    font-family: Consolas,monospace;
+    margin: 0;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+*{
+    box-sizing: border-box;
+}
+.left {
+    width: 530px;
+    position: absolute;
+    top:50px;
+    left:calc( ( 100vw - 895px ) / 2 );
+}
+.list{
+    margin: 10px;
+}
+.right {
+    width:395px;
+    position: absolute;
+    top:50px;
+    left: calc( ( 100vw - 895px ) / 2 + 520px );
+}
+
+html,body {
+    margin: 0;
+}
+.cmd {
+    font-family: Consolas, monospace;
+    font-size: 20px;
+}
+.cmd.cmd-type {
+    color: #cd0000;
+}
+.cmd.cmd-ctl1 {
+    color: #00b200;
+}
+
+.cmd.cmd-ctl2 {
+    color: #00b3ff;
+}
+.cmdline .el-input,.cmdline .el-select {
+    width: 120px;
+    height:30px;
+}
+.cmdline input.el-input__inner {
+    height: 100%;
+}
+
+.cmdline * {
+    border-radius: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+.cmdline .jmpbox {
+    width: 240px;
+}
+.cmdline {
+    height: 30px;
+}
+
+.line {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align:center;
+}
+.box>.line:first-child{
+    border:0;
+    height:29px;
+    line-height: 28px;
+    padding: 0;
+}
+.box {
+    text-align: left;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.actionbtn {
+    float: right;
+}
+*[v-cloak]{
+    display: none;
+}
+.delbtn {
+    width: 30px;
+    padding: 0;
+    line-height: 28px;
+    height: 30px;
+}
+.el-button+.el-button {
+    margin: 0;
+}
+.cmdline .jmpbox>div {
+    width: 100%;
+}
+        </style>
+    </head>
+    <body>
+        <div id="toki" v-cloak>
+            <div class="title">
+                <h1>TokiCPUEMU Editor</h1>
+            </div>
+            <div class="left">
+                <div class="list">
+                    <el-button @click="commands.push({type:null,ctl1:null,ctl2:null,nr:null})" size="mini" class="cmdline" style="width:60%">添加一条指令
+                    </el-button><el-button @click="parse" size="mini" class="cmdline" style="width:20%">导入
+                    </el-button><el-button @click="exec" size="mini" class="cmdline" style="width:20%">执行
+                    </el-button>
+                    <div v-for="(i,a) in commands" :key="a" class="cmdline">
+                        <el-button class="delbtn" size="mini" @click="commands.splice(a,1)">
+                            删
+                        </el-button><el-select size="mini" v-model="commands[a].type" placeholder="指令类型">
+                            <el-option label="停机" :value="0"></el-option>
+                            <el-option label="赋值" :value="1"></el-option>
+                            <el-option label="加法" :value="2"></el-option>
+                            <el-option label="减法" :value="3"></el-option>
+                            <el-option label="乘法" :value="4"></el-option>
+                            <el-option label="除法" :value="5"></el-option>
+                            <el-option label="逻辑与" :value="6"></el-option>
+                            <el-option label="逻辑或" :value="7"></el-option>
+                            <el-option label="逻辑非" :value="8"></el-option>
+                            <el-option label="比较" :value="9"></el-option>
+                            <el-option label="跳转" :value="10"></el-option>
+                            <el-option label="输入" :value="11"></el-option>
+                            <el-option label="输出" :value="12"></el-option>
+                        </el-select><span v-if="i.type!=10"><el-select size="mini" v-model="commands[a].ctl1" placeholder="操作位1"
+                        :disabled="!i.type">
+                            <el-option label="立即数" :value="0"></el-option>
+                            <el-option label="寄存器1" :value="1"></el-option>
+                            <el-option label="寄存器2" :value="2"></el-option>
+                            <el-option label="寄存器3" :value="3"></el-option>
+                            <el-option label="寄存器4" :value="4"></el-option>
+                            <el-option label="寄存器5" :value="5"></el-option>
+                            <el-option label="寄存器6" :value="6"></el-option>
+                            <el-option label="寄存器7" :value="7"></el-option>
+                            <el-option label="寄存器8" :value="8"></el-option>
+                        </el-select><el-select size="mini" v-model="commands[a].ctl2" placeholder="操作位2"
+                         :disabled="!i.type||i.type==11||i.type==12"
+                        >
+                            <el-option label="立即数" :value="0"></el-option>
+                            <el-option label="寄存器1" :value="1"></el-option>
+                            <el-option label="寄存器2" :value="2"></el-option>
+                            <el-option label="寄存器3" :value="3"></el-option>
+                            <el-option label="寄存器4" :value="4"></el-option>
+                            <el-option label="寄存器5" :value="5"></el-option>
+                            <el-option label="寄存器6" :value="6"></el-option>
+                            <el-option label="寄存器7" :value="7"></el-option>
+                            <el-option label="寄存器8" :value="8"></el-option>
+                        </el-select></span><el-select v-else size="mini" v-model="commands[a].ctl2" class="jmpbox" placeholder="跳转条件">
+                            <el-option label="无条件" :value="0"></el-option>
+                            <el-option label="flag零" :value="1"></el-option>
+                            <el-option label="flag正" :value="2"></el-option>
+                            <el-option label="flag负" :value="3"></el-option>
+                        </el-select><el-input type="number" :disabled="!i.type||i.type==11||i.type==12||(i.ctl1>0&&i.ctl2>0)"
+                        size="mini" v-model="commands[a].nr" placeholder="立即数">
+                        </el-input>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="box">
+                    <div class="line">
+                        <el-button @click="copy" class="actionbtn" style="float:left" size="mini">复制</el-button>
+                        生成的指令
+                        <el-button @click="down" class="actionbtn" size="mini">下载</el-button>
+                    </div>
+                    <div class="linn" ref="linn">
+                        <div class="line" v-for="(i,a) in commands" :key="'cm'+a">
+                            <div v-if="i.type!==null">
+                                <span class="cmd cmd-type" v-text="i.type.toString(2).padStart(8,'0')"></span><span
+                                class="cmd cmd-ctl1" v-text="(i.type==0?'0':(i.ctl1||0).toString(2)).padStart(4,'0')"></span><span
+                                class="cmd cmd-ctl2" v-text="(i.type==0?'0':(i.ctl2||0).toString(2)).padStart(4,'0')"></span><span
+                                class="cmd cmd-nr" v-text="(i.type==0?'0':bin(Number(i.nr)||0)).padStart(16,'0')"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <form id="execForm" action="https://f.e123.pw/bupt/cpuemu/run.php" method="post" target="_blank">
+                    <input type="hidden" name="cmds" id="ccmds"/>
+                    <input type="hidden" name="stdin" id="cstdin"/>
+                </form>
+    </body>
+    <script>!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).copyToClipboard=e()}}(function(){return function(){return function e(t,n,o){function r(a,i){if(!n[a]){if(!t[a]){var u="function"==typeof require&&require;if(!i&&u)return u(a,!0);if(c)return c(a,!0);var l=new Error("Cannot find module '"+a+"'");throw l.code="MODULE_NOT_FOUND",l}var s=n[a]={exports:{}};t[a][0].call(s.exports,function(e){return r(t[a][1][e]||e)},s,s.exports,e,t,n,o)}return n[a].exports}for(var c="function"==typeof require&&require,a=0;a<o.length;a++)r(o[a]);return r}}()({1:[function(e,t,n){"use strict";var o=e("toggle-selection"),r="Copy to clipboard: #{key}, Enter";t.exports=function(e,t){var n,c,a,i,u,l,s=!1;t||(t={}),n=t.debug||!1;try{if(a=o(),i=document.createRange(),u=document.getSelection(),(l=document.createElement("span")).textContent=e,l.style.all="unset",l.style.position="fixed",l.style.top=0,l.style.clip="rect(0, 0, 0, 0)",l.style.whiteSpace="pre",l.style.webkitUserSelect="text",l.style.MozUserSelect="text",l.style.msUserSelect="text",l.style.userSelect="text",document.body.appendChild(l),i.selectNode(l),u.addRange(i),!document.execCommand("copy"))throw new Error("copy command was unsuccessful");s=!0}catch(o){n&&console.error("unable to copy using execCommand: ",o),n&&console.warn("trying IE specific stuff");try{window.clipboardData.setData("text",e),s=!0}catch(o){n&&console.error("unable to copy using clipboardData: ",o),n&&console.error("falling back to prompt"),c=function(e){var t=(/mac os x/i.test(navigator.userAgent)?"⌘":"Ctrl")+"+C";return e.replace(/#{\s*key\s*}/g,t)}("message"in t?t.message:r),window.prompt(c,e)}}finally{u&&("function"==typeof u.removeRange?u.removeRange(i):u.removeAllRanges()),l&&document.body.removeChild(l),a()}return s}},{"toggle-selection":2}],2:[function(e,t,n){t.exports=function(){var e=document.getSelection();if(!e.rangeCount)return function(){};for(var t=document.activeElement,n=[],o=0;o<e.rangeCount;o++)n.push(e.getRangeAt(o));switch(t.tagName.toUpperCase()){case"INPUT":case"TEXTAREA":t.blur();break;default:t=null}return e.removeAllRanges(),function(){"Caret"===e.type&&e.removeAllRanges(),e.rangeCount||n.forEach(function(t){e.addRange(t)}),t&&t.focus()}}},{}]},{},[1])(1)});
+    function getTwoComplement(len) {
+    if (len <= 1) throw new Error('Do you think it make sense?');
+
+    var LEN = len = len || 32; // default to be 32
+
+    var count = 0,
+        bits = [];
+
+    // set the priority of each bit
+    while (len > 0) {
+        bits[len - 1] = Math.pow(2, count);
+        len--;
+        count++;
+    }
+    // set the most significant bit as negative
+    bits[0] = -bits[0];
+
+    function TwoComplement(num) {
+        this.num = num;
+    }
+
+    TwoComplement.prototype = {
+        toHex: function toHex() {
+            var bin = this.toBin();
+            // Every 4-bit compose a hex
+            return bin.replace(/\d{4,4}/g, function(match) {
+                return (parseInt(match, 2)).toString(16).toUpperCase();
+            });
+        },
+        toBin: function toBin() {
+            var num = this.num;
+            res = [];
+
+            if (num < 0) {
+                res[0] = 1;
+                num -= bits[0];
+            }
+
+            var i = 1;
+            while (num != 0 && i < LEN) {
+                if (num - bits[i] >= 0) {
+                    num -= bits[i];
+                    res[i] = 1;
+                }
+                i++;
+            }
+
+            if (num != 0) {
+                throw new Error(num + " out of " + LEN + "-bits range");
+            }
+
+            var s = '';
+            for (i = 0; i < LEN; i++) {
+                s += (res[i] ? res[i] : 0);
+            }
+
+            return s;
+        }
+    };
+
+    TwoComplement.MIN = bits[0];
+    TwoComplement.MAX = (function MAX() {
+        var res = 0;
+        for (var i = 1; i < LEN; i++) {
+            res += bits[i];
+        }
+        return res;
+    })();
+
+    return TwoComplement;
+}
+t16 = getTwoComplement(16);
+        window.t = new Vue({
+            el: '#toki',
+            data: function() {
+                return {
+                    commands:[
+                        
+                    ]
+                }
+            },
+            methods:{
+                bin:function(dec){
+                    dec = Number(dec);
+                    return dec>=0?dec.toString(2):new t16(dec).toBin()
+                },
+                copy:function(){
+                    let txt = t.$refs.linn.innerText;
+                    copyToClipboard(txt);
+                    this.$message.success("已复制");
+                },
+                down:function(){
+                    var txt = t.$refs.linn.innerText;
+                    var blob = new Blob([txt], {type: "text/plain;charset=utf-8"});
+                    saveAs(blob, "dict.dic");
+                    this.$message.success("开始下载");
+                }
+                ,parse:function(){
+                    this.$prompt('请粘贴指令文本到下面的文本框中', '导入', {
+                        inputType:"textarea",
+                    }).then(({ value }) => {
+                        let lines = value.split("\n");
+                        for(let line of lines){
+                            let cmd = {};
+                            cmd.type = parseInt(line.substr(0,8),2);
+                            cmd.ctl1 = parseInt(line.substr(8,4),2);
+                            cmd.ctl2 = parseInt(line.substr(12,4),2);
+                            cmd.nr = (parseInt(line.substr(16,16),2) << 16) >> 16;
+                            this.commands.push(cmd);
+                        }
+                    }).catch(function(){})
+                },exec:function(){
+                    this.$prompt('请输入程序所需的输入数据，一行一个', '输入', {
+                        inputType:"textarea",
+                    }).then(({ value }) => {
+                        document.getElementById("cstdin").value = value;
+                        document.getElementById("ccmds").value = t.$refs.linn.innerText;;
+                        document.getElementById("execForm").submit();
+                    }).catch(function(){})
+                    
+                }
+            }
+    })
+    </script>
+</html>
